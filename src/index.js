@@ -1,42 +1,29 @@
-import SearchNews from './js/fetchAPI';
+import onResize from './js/resize';
+import { mqHandler } from './js/functions/mqHandler';
+import getCatagories from './js/filter';
+import './js/js-header/dark-mode';
+import './js/js-header/mobile-menu';
+import './js/js-read/read';
+import './js/localStorageFavorite';
+import { toLS } from './js/functions/saveToLocalStorage';
+// import './js/functions/eventLiCard';
+// import { calendar } from './js/calendar';
 
-const newsAPI = new SearchNews();
-const categoriesDiv = document.querySelector('.categories');
-const wrap = document.querySelector('.categories__wrap');
-const overflowed = document.querySelector('.overflowed')
-// async function viewFunc() {
-//   console.log(newsAPI.content);
-//   newsAPI.getnews().then(pagemark);
-// }
+import { refs } from './js/refs';
 
-// viewFunc();
-
-function pagemark(arr) {
-  console.log('ARR', arr);
+if (
+  window.location.pathname === '/favorite.html' ||
+  window.location.pathname === '/read.html'
+) {
+  window.addEventListener('DOMContentLoaded', event => mqHandler());
 }
-function getCategories() {}
-function byCategory() {}
 
-async function responsiveInsert() {
-
-  newsAPI.getnews().then(categs => {
-      const catsMarkup = categs.map(
-        element =>
-          `<button type="button" data-cat="${element.section}">${element.display_name}</button>`
-      ).join('');
-     categoriesDiv.insertAdjacentHTML('beforeend', catsMarkup)}).then(setTimeout(() => { IsDivOverFlow(categoriesDiv)
-      
-     }, 1000));
-  
-  }
-  
-responsiveInsert();
-
-
-async function IsDivOverFlow(div)
-{
-  let rect = div.getBoundingClientRect();
-  console.log('rect', rect)
-  
+console.log(window.location);
+if (
+  window.location.pathname === '/' ||
+  window.location.pathname === '/index.html'
+) {
+  refs.galleryList.addEventListener('click', toLS);
 }
-// IsDivOverFlow(categoriesDiv)
+
+console.dir(document);
