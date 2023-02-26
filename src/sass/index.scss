@@ -1,13 +1,27 @@
 @import './common';
-@import './general-styles/mixins';
-@import './common-elements/calendar';
-@import './general-styles/general-style';
-@import './general-styles/colors';
-@import './components/filter';
-@import './components/footer';
-@import './components/gallery';
-@import './components/header';
-@import './components/pagination';
-@import './components/notfindnews';
-@import './components/weather'
+@import './header';
+@import './baseStyles';
+@import './colors';
+@import './mobile_menu';
 
+button{
+    display: block;
+    border: 2px solid #4440F6;
+    border-radius: 20px;
+    padding: 8px 21px;
+    margin-bottom: 10px;
+}
+
+.categories{
+    display: flex;
+    overflow: hidden;
+}
+.overflowed{
+    width: 20%;
+    height: 100px;
+    outline: tomato;
+    background-color: rebeccapurple;
+}
+.categories__wrap{
+    display: flex;
+}

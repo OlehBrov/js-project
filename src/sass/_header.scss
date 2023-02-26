@@ -1,0 +1,100 @@
+.header {
+  position: relative;
+  padding: 24px 16px 22px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--grey);
+  overflow: hidden;
+}
+
+.header__logo {
+  font-size: 24px;
+  margin-right: 14px;
+}
+
+.header__menu-btn,
+.header__search-btn {
+  background: none;
+}
+.burger-menu-icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+.search__wrap {
+  position: relative;
+  margin-right: 14px;
+  width: 100%;
+  height: 33px;
+  overflow: hidden;
+}
+.input__search-icon {
+  position: absolute;
+  display: block;
+  top: 6;
+  left: 10;
+  width: 20px;
+  height: 20px;
+}
+
+.header__menu-btn {
+  margin-right: 0;
+  margin-left: auto;
+}
+
+#news__search {
+  height: 31px;
+
+  width: 100%;
+  border: 1px solid var(--black);
+  border-radius: 20px;
+  padding: 6px;
+  padding-left: 32px;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+  color: var(--black);
+}
+
+.header__search-btn {
+  position: absolute;
+  top: 6;
+  right: 0;
+}
+.search-icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+.search-input__slider {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: -100%;
+  max-width: 213px;
+  width: 100%;
+  height: auto;
+
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.is-visible {
+  transform: translateX(-100%);
+}
+.is-hidden {
+  display: none;
+}
+
+.mob__menu-close{
+    position: absolute;
+    background: none;
+    top: 28px;
+    right: 16px;
+
+}
+.mob__menu-close-icon{
+    width: 24px;
+    height: 24px;
+}
+
